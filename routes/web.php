@@ -298,12 +298,13 @@ Route::get('/test',function(){
             });
             return response()->json($appointment);
         });
-        Route::get('/test2',function(){
-                if ($appointment = Redis::get('app-1')) {
-                        return json_decode($appointment);
+
+ Route::get('/test2',function(){
+                if ($appointment = json_decode(Redis::get('app-1'))) {
+                        return $appointment;
                     }
                         $appointment = Appointment::all();
-                        Redis::set('app-1',$appointment);
+                        Redis::set('app-1',json_encode($appointment));
                 
                 return $appointment;
        
@@ -312,4 +313,14 @@ Route::get('/test',function(){
 Route::get('/',function(){
         $visit = Redis::incr('visit');
             return response()->json($visit);
+});
+Route::get('/set',function(){
+        $visit = Redis::set('one',json_encode(Appointment::first()));
+            return response()->json($visit);
+});
+Route::get('/get',function(){
+        if(Redis::exists('one')){
+          return json_decode(Redis::get('one'));
+        }
+        return 'no value';
 });
