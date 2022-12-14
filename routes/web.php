@@ -324,3 +324,9 @@ Route::get('/get',function(){
         }
         return 'no value';
 });
+Route::get('/remember',function(){
+     $apppointment=cache()->remember('remember',60*60,function(){
+        return Appointment::latest()->take(200)->get();
+     });
+     return $apppointment;
+});
