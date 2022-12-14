@@ -166,132 +166,132 @@ use Illuminate\Support\Facades\Redis;
 //     return response()->json(['error' => 'Item not found'], 404);
 // }
 // });
-// Route::get('/p',function(){
-//     // $title ='Setapak';
+Route::get('/p',function(){
+    $title ='Setapak';
 //     $data=Cache::get('patient-jan',100,function(){
 //         return Patient::whereMonth('created_at', '01')
 //         ->whereYear('created_at', '2022')
 //         ->get()->count();
 //     });
 //     return response()->json(compact('data'));
-//     // $jan=Patient::whereMonth('created_at', '01')
-//     //         ->whereYear('created_at', '2022')
-//     //         ->get()->count();
+    $jan=Patient::whereMonth('created_at', '01')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
 
-//     // $feb=Patient::whereMonth('created_at', '02')
-//     //         ->whereYear('created_at', '2022')
-//     //         ->get()->count();
+    $feb=Patient::whereMonth('created_at', '02')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
 
-//     // $marc=Patient::whereMonth('created_at', '03')
-//     //         ->whereYear('created_at', '2022')
-//     //         ->get()->count();
+    $marc=Patient::whereMonth('created_at', '03')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
 
-//     // $april=Patient::whereMonth('created_at', '04')
-//     //         ->whereYear('created_at', '2022')
-//     //         ->get()->count();
+    $april=Patient::whereMonth('created_at', '04')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
 
-//     // $mei=Patient::whereMonth('created_at', '05')
-//     //         ->whereYear('created_at', '2022')
-//     //         ->get()->count();
+    $mei=Patient::whereMonth('created_at', '05')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
 
-//     // $jun=Patient::whereMonth('created_at', '06')
-//     //         ->whereYear('created_at', '2022')
-//     //         ->get()->count();
+    $jun=Patient::whereMonth('created_at', '06')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
 
-//     // $july=Patient::whereMonth('created_at', '07')
-//     //         ->whereYear('created_at', '2022')
-//     //         ->get()->count();
+    $july=Patient::whereMonth('created_at', '07')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
 
-//     // $augt=Patient::whereMonth('created_at', '08')
-//     //         ->whereYear('created_at', '2022')
-//     //         ->get()->count();
+    $augt=Patient::whereMonth('created_at', '08')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
 
-//     // $sep=Patient::whereMonth('created_at', '09')
-//     //         ->whereYear('created_at', '2022')
-//     //         ->get()->count();
+    $sep=Patient::whereMonth('created_at', '09')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
 
-//     // $oct=Patient::whereMonth('created_at', '10')
-//     //         ->whereYear('created_at', '2022')
-//     //         ->get()->count();
+    $oct=Patient::whereMonth('created_at', '10')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
 
-//     // $nov=Patient::whereMonth('created_at', '11')
-//     //         ->whereYear('created_at', '2022')
-//     //         ->get()->count();
+    $nov=Patient::whereMonth('created_at', '11')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
 
-//     // $dec=Patient::whereMonth('created_at', '12')
-//     //         ->whereYear('created_at', '2022')
-//     //         ->get()->count();
-
-
-//             // dd(compact('jan','feb','marc','april','mei','june','july','aug','sep','oct','nov','dec'));
-//             // return response()->json(compact('jan','feb','marc','april','mei','jun','july','augt','sep','oct','nov','dec','title'));
-// });
-// Route::get('/p1', function () {
-//     // return view('welcome');
-// $title ='Setapak';
-//     $jan=DB::table('patients')
-//             ->whereMonth('created_at', '01')
-//             ->whereYear('created_at', '2022')
-//             ->get()->count();
-
-//     $feb=DB::table('patients')
-//             ->whereMonth('created_at', '02')
-//             ->whereYear('created_at', '2022')
-//             ->get()->count();
-
-//     $marc=DB::table('patients')
-//             ->whereMonth('created_at', '03')
-//             ->whereYear('created_at', '2022')
-//             ->get()->count();
-
-//     $april=DB::table('patients')
-//             ->whereMonth('created_at', '04')
-//             ->whereYear('created_at', '2022')
-//             ->get()->count();
-
-//     $mei=DB::table('patients')
-//             ->whereMonth('created_at', '05')
-//             ->whereYear('created_at', '2022')
-//             ->get()->count();
-
-//     $jun=DB::table('patients')
-//             ->whereMonth('created_at', '06')
-//             ->whereYear('created_at', '2022')
-//             ->get()->count();
-
-//     $july=DB::table('patients')
-//             ->whereMonth('created_at', '07')
-//             ->whereYear('created_at', '2022')
-//             ->get()->count();
-
-//     $augt=DB::table('patients')
-//             ->whereMonth('created_at', '08')
-//             ->whereYear('created_at', '2022')
-//             ->get()->count();
-
-//     $sep=DB::table('patients')
-//             ->whereMonth('created_at', '09')
-//             ->whereYear('created_at', '2022')
-//             ->get()->count();
-
-//     $oct=DB::table('patients')
-//             ->whereMonth('created_at', '10')
-//             ->whereYear('created_at', '2022')
-//             ->get()->count();
-
-//     $nov=DB::table('patients')
-//             ->whereMonth('created_at', '11')
-//             ->whereYear('created_at', '2022')
-//             ->get()->count();
-
-//     $dec=DB::table('patients')
-//             ->whereMonth('created_at', '12')
-//             ->whereYear('created_at', '2022')
-//             ->get()->count();
+    $dec=Patient::whereMonth('created_at', '12')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
 
 
-//             return response()->json(compact('jan','feb','marc','april','mei','jun','july','augt','sep','oct','nov','dec','title'));
-// });
+        //     dd(compact('jan','feb','marc','april','mei','june','july','aug','sep','oct','nov','dec'));
+            return response()->json(compact('jan','feb','marc','april','mei','jun','july','augt','sep','oct','nov','dec','title'));
+});
+Route::get('/p1', function () {
+    // return view('welcome');
+$title ='Setapak';
+    $jan=DB::table('patients')
+            ->whereMonth('created_at', '01')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
+
+    $feb=DB::table('patients')
+            ->whereMonth('created_at', '02')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
+
+    $marc=DB::table('patients')
+            ->whereMonth('created_at', '03')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
+
+    $april=DB::table('patients')
+            ->whereMonth('created_at', '04')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
+
+    $mei=DB::table('patients')
+            ->whereMonth('created_at', '05')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
+
+    $jun=DB::table('patients')
+            ->whereMonth('created_at', '06')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
+
+    $july=DB::table('patients')
+            ->whereMonth('created_at', '07')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
+
+    $augt=DB::table('patients')
+            ->whereMonth('created_at', '08')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
+
+    $sep=DB::table('patients')
+            ->whereMonth('created_at', '09')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
+
+    $oct=DB::table('patients')
+            ->whereMonth('created_at', '10')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
+
+    $nov=DB::table('patients')
+            ->whereMonth('created_at', '11')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
+
+    $dec=DB::table('patients')
+            ->whereMonth('created_at', '12')
+            ->whereYear('created_at', '2022')
+            ->get()->count();
+
+
+            return response()->json(compact('jan','feb','marc','april','mei','jun','july','augt','sep','oct','nov','dec','title'));
+});
 Route::get('/test',function(){
         $appointment = Cache::rememberForever('first-app', function () {
                 return Appointment::first();
@@ -330,3 +330,26 @@ Route::get('/remember',function(){
      });
      return $apppointment;
 });
+
+
+// sudo apt install php php-cli php-common php-mysql php-zip php-curl php-gd php-mbstring php-xml php-bcmath php-fpm php-phpdbg php-cgi libphp-embed libapache2-mod-php
+
+// Route::get('/user1',function(){
+//         $users=cache()->remember('remember',60*60,function(){
+//            return User::latest()->take(200)->get();
+//         });
+//         return $users;
+//    });
+
+
+// Route::get('/user3',function(){
+//         if ($users = json_decode(Redis::get('test'))) {
+//                 return $users;
+//             }
+//                 $users = User::all();
+//                 Redis::set('test',json_encode($users));
+        
+//         return $users;
+
+
+// });
