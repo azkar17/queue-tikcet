@@ -293,8 +293,23 @@ use Illuminate\Support\Facades\Redis;
 //             return response()->json(compact('jan','feb','marc','april','mei','jun','july','augt','sep','oct','nov','dec','title'));
 // });
 Route::get('/test',function(){
-        $appointment = Cache::remember('app', 20, function () {
+        $appointment = Cache::rememberForever('first-app', function () {
                 return Appointment::first();
             });
             return response()->json($appointment);
+        });
+        Route::get('/test2',function(){
+                if ($appointment = Redis::get('app-1')) {
+                        return json_decode($appointment);
+                    }
+                        $appointment = Appointment::all();
+                        Redis::set('app-1',$appointment);
+                
+                return $appointment;
+       
+
+});
+Route::get('/',function(){
+        $visit = Redis::incr('visit');
+            return response()->json($visit);
 });
